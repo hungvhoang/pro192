@@ -8,14 +8,26 @@ public class Part3 {
         for(int i=0;i<l;i++){
             System.out.print("Student "+(i+1)+": ");
             list[i]= sc.nextLine();
-            if(list[i]==".") break;
             }
         sc.close();
     }
 
     static void upperName(String[] list,int l){
         for(int i=0;i<l; i++){
-        
+            String tempName="";
+            String[] splitName = list[i].split(" ");
+            for(int j=0; j < splitName.length;j++){
+                splitName[j] = splitName[j].substring(0, 1).toUpperCase() + splitName[j].substring(1);
+                tempName += splitName[j] + " ";
+            }
+            list[i] = tempName;
+        }
+    }
+
+    static void printList(String[] list, int l){
+        System.out.println("The list of student you entered: ");
+        for(int i= 0;i<l;i++){
+            System.out.println((i+1)+". "+ list[i]);
         }
     }
 
@@ -23,5 +35,6 @@ public class Part3 {
         String[] list = new String[10];
         inputName(list,10);
         upperName(list,10);
+        printList(list, 10);
     }
 }

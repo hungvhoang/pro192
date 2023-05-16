@@ -15,16 +15,16 @@ public class Part2 {
         char op = sc.next().charAt(0);
         switch(op){
             case '+':
-                System.out.printf("%d+%d= %d\n",num1,num2, num1 + num2);
+                System.out.printf("%d + %d= %d\n",num1,num2, num1 + num2);
                 break;
             case '-':
-                System.out.printf("%d-%d= %d\n",num1,num2,num1 - num2);
+                System.out.printf("%d - %d= %d\n",num1,num2,num1 - num2);
                 break;
             case '*':
-                System.out.printf("%d*%d= %d\n",num1,num2,num1 * num2);
+                System.out.printf("%d * %d= %d\n",num1,num2,num1 * num2);
                 break;
             case '/':
-                System.out.printf("%d/%d= %d\n",num1,num2,num1 / num2);
+                System.out.printf("%d / %d= %d\n",num1,num2,num1 / num2);
                 break;
             default :
                 System.out.println("Not supported.");    
