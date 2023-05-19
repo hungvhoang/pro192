@@ -1,3 +1,4 @@
+package part3;
 /*Write a Java program that will accept the list of student name, convert all names to uppercase
 and then the program will print out the list of student name.*/
 import java.util.Scanner;

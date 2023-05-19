@@ -1,3 +1,4 @@
+package part2;
 /*Write a Java program that will accept two float numbers and an operator (+ - / *) then the program
 will print out the result of the specified expression that bases on the inputted operator. */
 
