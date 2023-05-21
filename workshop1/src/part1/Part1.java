@@ -1,6 +1,6 @@
-package part1;
     /*Write a Java program that will accept a matrix of integers then this matrix will be printed out and
     sum of values and average of values are printed also. */
+    package part1;
     import java.util.Scanner;
     
     public class Part1{
@@ -55,10 +55,8 @@ package part1;
             matrix= new int[rows][cols];
             setVal(matrix);
             getVal(matrix);
-            int sum =addAll(matrix);
-            System.out.println("Sum: "+sum);
-            float av = average(matrix,rows,cols);
-            System.out.println("Average: "+av); 
+            System.out.println("Sum: "+addAll(matrix));
+            System.out.println("Average: "+average(matrix, rows, cols)); 
             sc.close();
         }
     }
