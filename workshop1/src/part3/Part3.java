@@ -17,11 +17,11 @@ public class Part3 {
     //Method to capitalize first name and last name of the student.
     static void upperName(String[] list){
         for(int i=0;i<list.length; i++){
+            list[i]=list[i].toLowerCase();
             String tempName="";
             String[] splitName = list[i].split(" ");
             for(int j=0; j < splitName.length;j++){
-                splitName[j] = splitName[j].substring(0, 1).toUpperCase() + splitName[j].substring(1);
-                tempName += splitName[j] + " ";
+                tempName += splitName[j].substring(0, 1).toUpperCase() + splitName[j].substring(1)+" ";
             }
             list[i] = tempName;
         }
