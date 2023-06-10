@@ -9,21 +9,12 @@ public class AntiqueShop {
     public static void main(String[] args){
         Item item=null;
         int choice=0;
+        boolean isValidInput=false;
         do{
-            System.out.println("INHERITANCE IMPLEMENT EXERCISE .-.");
-            System.out.println("Currently cannot save multi-item. Updating.....");
-            System.out.println("\t=====MENU=====");
-            System.out.println("1. Create a Vase.");
-            System.out.println("2. Create a Statue.");
-            System.out.println("3. Create a Painting.");
-            System.out.println("4. Display the Item.");
-            System.out.println("5. Exit program.");
-            boolean isValidInput=true;
             do{
                 try{
-                    choice=UserInput.getInt("Input a choice: ");
+                    choice = getMenu();
                     if(choice<1|choice>5) throw new Exception();
-                    isValidInput=false;
                 }catch(Exception e){
                     System.out.println("Choose from 1 to 5 PLEASE.");
                 }
@@ -56,5 +47,16 @@ public class AntiqueShop {
                 System.out.println("Program quitted.");
             }
         }while(choice!=5);
+    }
+        public static int getMenu(){
+            System.out.println("INHERITANCE IMPLEMENT EXERCISE .-.");
+            System.out.println("\t=====MENU=====");
+            System.out.println("1. Create a Vase.");
+            System.out.println("2. Create a Statue.");
+            System.out.println("3. Create a Painting.");
+            System.out.println("4. Display the Item.");
+            System.out.println("5. Exit program.");
+            int choice = UserInput.getInt("Enter a choice: ");
+            return choice;
         }
     }
