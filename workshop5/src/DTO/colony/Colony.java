@@ -39,6 +39,6 @@ public class Colony extends Organization{
 
     public String toString() {
         return "\nThe colony size is: "+getSize()
-            +"\nThe colony's place is: "+getPlace();
+        +"\nThe colony's place is: "+getPlace();
     }
 }
