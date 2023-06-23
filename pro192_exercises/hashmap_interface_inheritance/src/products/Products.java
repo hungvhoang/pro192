@@ -13,7 +13,7 @@ public class Products extends HashMap<String,Product>{
         super();
     }
     public List<Product> toList(){
-        return new ArrayList<>(values());
+        return new ArrayList<>(this.values());
     }
     public void showAll(List<Product> list){
         for (Product i: list) {
@@ -51,7 +51,7 @@ public class Products extends HashMap<String,Product>{
     }
     public void sortByName(){
         List<Product> sortlList =toList();
-        Collections.sort(sortlList);
+        Collections.sort(sortlList,Product.compareName);
         System.out.println("List of products sorted by name:");
         showAll(sortlList);
     }

@@ -6,7 +6,7 @@ import javax.lang.model.util.ElementScanner14;
 
 import valuable.Valuable;
 
-public class Product implements Valuable,Comparable{
+public class Product implements Valuable{
     private String productCode;
     private String productName;
     private String supplier;
@@ -78,26 +78,25 @@ public class Product implements Valuable,Comparable{
     }
     @Override
     public float value() {
-        return (float)price*quantity;
+        return (float) (price*quantity);
     }
     @Override
     public float vat() {
-        return (Float)(value()*(8/100));
+        return (float)(value()*0.08);
     }
     @Override
     public float promotion() {
-        float promotion =0.0f;
-        if(this.hasPromotion){ 
-            promotion = (Float)((15/100)*this.value());
-        }
-        return promotion;
-    }
-    @Override
-    public int compareTo(Object o) {
-        return this.getProductName().compareToIgnoreCase(((Product)o).getProductName());
+      return hasPromotion ? (float) (this.value()*0.15):0; 
     }
     
-    public static Comparator compareValue = new Comparator() {
+    public static Comparator compareName = new Comparator() {
+
+        @Override
+        public int compare(Object o1, Object o2) {
+            return ((Product)o1).getProductName().compareTo((((Product)o2).getProductName()).toLowerCase());
+        }        
+    };
+     public static Comparator compareValue = new Comparator() {
 
         @Override
         public int compare(Object o1, Object o2) {
