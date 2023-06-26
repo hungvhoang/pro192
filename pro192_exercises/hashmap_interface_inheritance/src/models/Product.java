@@ -1,10 +1,7 @@
-package product;
+package models;
 
 import java.util.Comparator;
 
-import javax.lang.model.util.ElementScanner14;
-
-import valuable.Valuable;
 
 public class Product implements Valuable{
     private String productCode;
@@ -74,20 +71,9 @@ public class Product implements Valuable{
     }
 
     public String toString(){
-        return String.format("|%s|%s|%s|%s|%s|%.3f|%.3f|%.3f|.3f|%.3f|",productCode,productName,supplier,unit,price,quantity,value(),vat(),promotion());
+        return String.format("|%-8s|%-12s|%-10s|%-6s|%11.1f|%11.1f|%11.1f|",productCode,productName,supplier,unit,price,quantity,value());
     }
-    @Override
-    public float value() {
-        return (float) (price*quantity);
-    }
-    @Override
-    public float vat() {
-        return (float)(value()*0.08);
-    }
-    @Override
-    public float promotion() {
-      return hasPromotion ? (float) (this.value()*0.15):0; 
-    }
+    
     
     public static Comparator compareName = new Comparator() {
 
@@ -115,4 +101,16 @@ public class Product implements Valuable{
             return result;
         }        
     };
+    @Override
+    public float value() {
+       return (float) (price*quantity);
+    }
+    @Override
+    public float vat() {
+        return (float) (value()*0.08);
+    }
+    @Override
+    public float promotion() {
+        return (hasPromotion) ?  (value()*0.15f) : 0; 
+    }
 }

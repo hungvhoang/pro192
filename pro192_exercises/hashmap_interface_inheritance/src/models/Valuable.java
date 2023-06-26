@@ -1,4 +1,4 @@
-package valuable;
+package models;
 
 public interface Valuable {
     float value();
