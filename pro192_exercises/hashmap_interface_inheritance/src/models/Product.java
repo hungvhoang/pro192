@@ -79,7 +79,7 @@ public class Product implements Valuable{
 
         @Override
         public int compare(Object o1, Object o2) {
-            return ((Product)o1).getProductName().compareTo((((Product)o2).getProductName()).toLowerCase());
+            return ((Product)o1).getProductName().toLowerCase().compareTo((((Product)o2).getProductName()).toLowerCase());
         }        
     };
      public static Comparator compareValue = new Comparator() {

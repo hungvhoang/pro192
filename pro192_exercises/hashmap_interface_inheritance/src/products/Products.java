@@ -10,7 +10,7 @@ import models.Product;
 
 public class Products extends HashMap<String,Product>{
     private String header ="|  Code  |    Name    | Supplier | Unit |   Price   |  Quatity  |   Value   |";
-    private String row =   "-----------------------------------------------------------------------------";
+    private String row =   "|--------|------------|----------|------|-----------|-----------|-----------|";
     public Products(){
         super();
     }
